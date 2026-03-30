@@ -1,232 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Loren Barnhart | Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body { font-family: Arial, sans-serif; margin: 0; scroll-behavior: smooth; background: #121212; color: #fff; text-align: center; }
-a { text-decoration: none; color: inherit; }
-#hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #1c1c1c url('images/hero-background.jpg') center/cover no-repeat; position: relative; }
-#hero::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
-.hero-content { position: relative; z-index: 2; }
-.hero-content h1 { font-size: 48px; margin-bottom: 10px; }
-.hero-content p { font-size: 20px; margin-bottom: 20px; }
-.cta-btn { background: #ff3c3c; padding: 12px 24px; border-radius: 6px; color: #fff; font-weight: bold; transition: 0.3s; }
-.cta-btn:hover { background: #ff1a1a; transform: scale(1.05); }
-#music { padding: 40px 20px; }
-#music img { width: 100%; max-width: 500px; border-radius: 10px; transition: 0.3s; }
-#music img:hover { transform: scale(1.03); }
-audio { width: 100%; max-width: 500px; margin-top: 15px; }
-.book-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; padding: 20px; }
-.book-card { background: #1a1a1a; padding: 1rem; border-radius: 10px; width: 180px; transition: 0.3s; text-align: center; }
-.book-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255,0,0,0.4); }
-.book-card img { width: 100%; border-radius: 6px; margin-bottom: 8px; }
-.book-card h3 { margin: 5px 0; font-size: 16px; }
-.book-card a { display: inline-block; margin-top: 5px; padding: 6px 12px; background: #ff3c3c; border-radius: 4px; font-size: 14px; color: #fff; transition: 0.3s; }
-.book-card a:hover { background: #ff1a1a; transform: scale(1.05); }
-#contact { padding: 30px 20px; }
-form { margin: 0 auto; max-width: 400px; }
-input, textarea { width: 100%; padding: 10px; margin-bottom: 8px; border-radius: 5px; border: none; }
-button.submit-btn { background: #ff3c3c; padding: 10px 20px; border-radius: 6px; color: #fff; font-weight: bold; cursor: pointer; transition: 0.3s; }
-button.submit-btn:hover { background: #ff1a1a; }
-.copy-email { margin-top: 15px; }
-.copy-email button { margin-left: 5px; padding: 5px 10px; border-radius: 5px; background: #ff3c3c; color: #fff; border: none; cursor: pointer; }
-.copy-email button:hover { background: #ff1a1a; }
-footer { margin-top: 40px; padding: 20px; font-size: 14px; color: #ccc; }
-@media(max-width:700px){
-  .hero-content h1{font-size:32px;}
-  .hero-content p{font-size:16px;}
-  .book-card{width:140px;}
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Loren Barnhart | Technical Founder & Author</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; scroll-behavior: smooth; background: #121212; color: #fff; text-align: center; }
+        a { text-decoration: none; color: inherit; }
+        #hero { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #1c1c1c; position: relative; border-bottom: 3px solid #ff3c3c; }
+        .hero-content { z-index: 2; padding: 20px; }
+        .hero-content h1 { font-size: 48px; margin-bottom: 10px; }
+        .mission { background: #f4f4f4; color: #333; padding: 40px 20px; }
+        .mission h2 { margin: 0; font-size: 28px; }
+        .experience-section { padding: 40px 20px; background: #1a1a1a; text-align: left; max-width: 800px; margin: 0 auto; }
+        .job-entry { border-left: 3px solid #ff3c3c; padding-left: 20px; margin-bottom: 30px; }
+        .cta-btn { background: #ff3c3c; padding: 12px 24px; border-radius: 6px; color: #fff; font-weight: bold; transition: 0.3s; display: inline-block; margin-top: 20px; }
+        .cta-btn:hover { background: #ff1a1a; transform: scale(1.05); }
+        #music, #books, #contact { padding: 40px 20px; border-top: 1px solid #333; }
+        .book-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; padding: 20px; }
+        .book-card { background: #222; padding: 1rem; border-radius: 10px; width: 200px; transition: 0.3s; }
+        .book-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255,0,0,0.4); }
+        audio { width: 100%; max-width: 500px; margin-top: 15px; }
+        footer { padding: 40px 20px; background: #000; color: #888; font-size: 14px; }
+        footer a { color: #ff3c3c; margin: 0 10px; }
+    </style>
 </head>
 <body>
-<section style="text-align:center; padding:40px 20px; background:#f4f4f4;">
-  <h1>Built with Mechanic’s Logic. Created with a Writer’s Soul.</h1>
-  <p><em>I bring 15 years of high-stakes diagnostic experience to the digital world. Whether I’m tuning an ECM or architecting a web application, I believe in precise diagnostics, durable systems, and stories that matter.</em></p>
-</section>
-<section id="experience" style="padding: 20px; font-family: sans-serif; line-height: 1.6;">
-    <h2 style="border-bottom: 2px solid #333;">Technical & Creative Experience</h2>
-    <div style="margin-bottom: 20px;">
-        <h3>Loren Barnhart Publishing | Technical Founder</h3>
-        <p><strong>2024 – Present</strong></p>
-        <ul>
-            <li>Architecting digital portfolios and asset pipelines on Linux (Mint/Zorin).</li>
-            <li>Author of <em>The Quiet Collapse</em> and <em>Four Lanes From Death</em>.</li>
-        </ul>
-    </div>
-    <div style="margin-bottom: 20px;">
-        <h3>Mid State Motors (La Grange, TX) | Owner-Operator</h3>
-        <p><strong>5 Years (Business Logistics & Fleet Management)</strong></p>
-        <ul>
-            <li>Managed a 3-bay service center, 4 tow trucks, and 17 auto club contracts.</li>
-            <li>Contractor for Fayette County Sheriff’s Office emergency response.</li>
-        </ul>
-    </div>
+
+<section class="mission">
+    <h2>Built with Mechanic’s Logic. Created with a Writer’s Soul.</h2>
+    <p><em>I bring 15 years of high-stakes diagnostic experience to the digital world. From tuning ECMs to architecting web applications, I believe in precise diagnostics and durable systems.</em></p>
 </section>
 
-<!-- HERO -->
 <section id="hero">
-  <div class="hero-content">
-    <h1>Loren Barnhart</h1>
-    <p>Author | Storyteller | Dreamer</p>
-    <a href="#books" class="cta-btn">Explore Books</a>
-  </div>
+    <div class="hero-content">
+        <h1>Loren Barnhart</h1>
+        <p>Technical Founder | Author | Systems Specialist</p>
+        <a href="#books" class="cta-btn">Explore My Work</a>
+    </div>
 </section>
-<section id="experience" style="padding: 20px; font-family: sans-serif; line-height: 1.6;">
-    <h2 style="border-bottom: 2px solid #333;">Technical & Creative Experience</h2>
-    <div style="margin-bottom: 20px;">
+
+<section class="experience-section">
+    <h2 style="text-align:center; border-bottom: 2px solid #ff3c3c; padding-bottom: 10px;">Professional History</h2>
+    
+    <div class="job-entry">
         <h3>Loren Barnhart Publishing | Technical Founder</h3>
         <p><strong>2024 – Present</strong></p>
         <ul>
-            <li>Architecting digital portfolios and asset pipelines on Linux (Mint/Zorin).</li>
-            <li>Author of <em>The Quiet Collapse</em> and <em>Four Lanes From Death</em>.</li>
+            <li>Architecting full-stack portfolios and asset pipelines on Linux (Mint/Zorin).</li>
+            <li>Published author of <em>The Quiet Collapse</em> and <em>Four Lanes From Death</em>.</li>
+            <li>Directing AI-assisted software and music composition workflows.</li>
         </ul>
     </div>
-    <div style="margin-bottom: 20px;">
+
+    <div class="job-entry">
+        <h3>SED Automotive ECM Tuning & Repair | Specialist</h3>
+        <p><strong>10 Years (Dealership & Independent)</strong></p>
+        <ul>
+            <li>Advanced Electrical & ECM/BCM Diagnostic Specialist at Ford & Chrysler dealerships.</li>
+            <li>Expert-level systems troubleshooting, performance tuning, and hardware logic.</li>
+            <li>Bridging mechanical engineering with modern digital systems architecture.</li>
+        </ul>
+    </div>
+
+    <div class="job-entry">
         <h3>Mid State Motors (La Grange, TX) | Owner-Operator</h3>
-        <p><strong>5 Years (Business Logistics & Fleet Management)</strong></p>
+        <p><strong>5 Years</strong></p>
         <ul>
             <li>Managed a 3-bay service center, 4 tow trucks, and 17 auto club contracts.</li>
-            <li>Contractor for Fayette County Sheriff’s Office emergency response.</li>
+            <li>Provided emergency response and fleet logistics for the Fayette County Sheriff’s Office.</li>
         </ul>
     </div>
 </section>
 
-<!-- MUSIC -->
 <section id="music">
-  <h2>Music Vibes</h2>
-  <img src="images/music-vibes.png" alt="Music Vibes">
-  <p>Listen now and get the vibe — available for licensing or sale!</p>
-  <audio controls>
-    <source src="audio/song_Edge_Of_Goodby.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+    <h2>Music Vibes</h2>
+    <audio controls>
+        <source src="audio/song_Edge_Of_Goodby.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </section>
-<section id="experience" style="padding: 20px; font-family: sans-serif; line-height: 1.6;">
-    <h2 style="border-bottom: 2px solid #333;">Technical & Creative Experience</h2>
-    <div style="margin-bottom: 20px;">
-        <h3>Loren Barnhart Publishing | Technical Founder</h3>
-        <p><strong>2024 – Present</strong></p>
-        <ul>
-            <li>Architecting digital portfolios and asset pipelines on Linux (Mint/Zorin).</li>
-            <li>Author of <em>The Quiet Collapse</em> and <em>Four Lanes From Death</em>.</li>
-        </ul>
-    </div>
-    <div style="margin-bottom: 20px;">
-        <h3>Mid State Motors (La Grange, TX) | Owner-Operator</h3>
-        <p><strong>5 Years (Business Logistics & Fleet Management)</strong></p>
-        <ul>
-            <li>Managed a 3-bay service center, 4 tow trucks, and 17 auto club contracts.</li>
-            <li>Contractor for Fayette County Sheriff’s Office emergency response.</li>
-        </ul>
+
+<section id="books">
+    <h2>Published Works</h2>
+    <div class="book-grid">
+        <div class="book-card">
+            <h3>The Quiet Collapse</h3>
+            <a href="https://books2read.com/u/boRLOa" target="_blank">View Book</a>
+        </div>
+        <div class="book-card">
+            <h3>Four Lanes From Death</h3>
+            <a href="https://books2read.com/u/bx2g8l" target="_blank">View Book</a>
+        </div>
     </div>
 </section>
 
-<!-- BOOKS -->
-<h2 id="books">Books</h2>
-<div class="book-grid">
-  <div class="book-card">
-    <img src="images/book1.jpg" alt="Book 1">
-    <h3>Book Title 1</h3>
-    <a href="https://draft2digital.com/book/4180241" target="_blank">View / Buy</a>
-  </div>
-  <div class="book-card">
-    <img src="images/book2.jpg" alt="Book 2">
-    <h3>Book Title 2</h3>
-    <a href="https://draft2digital.com/book/4177158" target="_blank">View / Buy</a>
-  </div>
-</div>
-
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact Me</h2>
-  <form id="contact-form" action="https://formspree.io/f/xqegqaek" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required><br>
-    <input type="email" name="email" placeholder="Your Email" required><br>
-    <textarea name="message" placeholder="Your Message" required></textarea><br>
-    <button type="submit" class="submit-btn">Send Message</button>
-  </form>
-  <p id="form-success" style="color:#00ff99; font-size:14px; margin-top:8px; display:none;">
-    ✅ Your message was sent! I’ll get back to you soon.
-  </p>
-  <div class="copy-email">
-    <span id="sales-email">barnhartloren33@gmail.com</span>
-    <button onclick="copyEmail()">Copy</button>
-  </div>
-</section>
-<section id="experience" style="padding: 20px; font-family: sans-serif; line-height: 1.6;">
-    <h2 style="border-bottom: 2px solid #333;">Technical & Creative Experience</h2>
-    <div style="margin-bottom: 20px;">
-        <h3>Loren Barnhart Publishing | Technical Founder</h3>
-        <p><strong>2024 – Present</strong></p>
-        <ul>
-            <li>Architecting digital portfolios and asset pipelines on Linux (Mint/Zorin).</li>
-            <li>Author of <em>The Quiet Collapse</em> and <em>Four Lanes From Death</em>.</li>
-        </ul>
-    </div>
-    <div style="margin-bottom: 20px;">
-        <h3>Mid State Motors (La Grange, TX) | Owner-Operator</h3>
-        <p><strong>5 Years (Business Logistics & Fleet Management)</strong></p>
-        <ul>
-            <li>Managed a 3-bay service center, 4 tow trucks, and 17 auto club contracts.</li>
-            <li>Contractor for Fayette County Sheriff’s Office emergency response.</li>
-        </ul>
-    </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  © 2026 Loren Barnhart | Built with ❤️
-</footer>
-
-<script>
-function copyEmail() {
-  const email = document.getElementById('sales-email').innerText;
-  navigator.clipboard.writeText(email)
-    .then(() => alert('Email copied to clipboard!'));
-}
-
-// Formspree submission
-const form = document.getElementById('contact-form');
-const successMsg = document.getElementById('form-success');
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const data = new FormData(form);
-
-  fetch(form.action, {
-    method: form.method,
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(response => {
-    if (response.ok) {
-      successMsg.style.display = 'block';
-      form.reset();
-    } else {
-      response.json().then(data => {
-        if (data.errors) {
-          alert("Oops! " + data.errors.map(error => error.message).join(", "));
-        } else {
-          alert("Oops! There was a problem submitting your form.");
-        }
-      });
-    }
-  })
-  .catch(() => alert("Oops! There was a problem submitting your form."));
-});
-</script>
-
-<footer style="margin-top: 50px; padding: 20px; text-align: center; border-top: 1px solid #ccc; background: #f9f9f9;">
     <p>&copy; 2026 Loren Barnhart Publishing</p>
-    <div>
-        <a href="https://books2read.com/u/boRLOa">The Quiet Collapse</a> | 
-        <a href="https://books2read.com/u/bx2g8l">Four Lanes From Death</a> | 
-        <a href="https://www.facebook.com/your-business-page" style="color: #1877F2; font-weight: bold;">Follow on Facebook</a>
-    </div>
-    <p style="font-size: 0.8em; color: #666;">Mechanic-Tuned Development & AI-Assisted Creativity</p>
+    <p>
+        <a href="https://books2read.com/u/boRLOa">Books</a> | 
+        <a href="https://www.facebook.com">Facebook</a>
+    </p>
+    <p style="font-size: 0.8em; margin-top: 10px;">Mechanic-Tuned Development & AI-Assisted Creativity</p>
 </footer>
+
 </body>
 </html>

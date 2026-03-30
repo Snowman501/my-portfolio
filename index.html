@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Loren Barnhart | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { font-family: Arial, sans-serif; margin: 0; scroll-behavior: smooth; background: #121212; color: #fff; text-align: center; }
+a { text-decoration: none; color: inherit; }
+#hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #1c1c1c url('images/hero-background.jpg') center/cover no-repeat; position: relative; }
+#hero::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
+.hero-content { position: relative; z-index: 2; }
+.hero-content h1 { font-size: 48px; margin-bottom: 10px; }
+.hero-content p { font-size: 20px; margin-bottom: 20px; }
+.cta-btn { background: #ff3c3c; padding: 12px 24px; border-radius: 6px; color: #fff; font-weight: bold; transition: 0.3s; }
+.cta-btn:hover { background: #ff1a1a; transform: scale(1.05); }
+#music { padding: 40px 20px; }
+#music img { width: 100%; max-width: 500px; border-radius: 10px; transition: 0.3s; }
+#music img:hover { transform: scale(1.03); }
+audio { width: 100%; max-width: 500px; margin-top: 15px; }
+.book-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; padding: 20px; }
+.book-card { background: #1a1a1a; padding: 1rem; border-radius: 10px; width: 180px; transition: 0.3s; text-align: center; }
+.book-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255,0,0,0.4); }
+.book-card img { width: 100%; border-radius: 6px; margin-bottom: 8px; }
+.book-card h3 { margin: 5px 0; font-size: 16px; }
+.book-card a { display: inline-block; margin-top: 5px; padding: 6px 12px; background: #ff3c3c; border-radius: 4px; font-size: 14px; color: #fff; transition: 0.3s; }
+.book-card a:hover { background: #ff1a1a; transform: scale(1.05); }
+#contact { padding: 30px 20px; }
+form { margin: 0 auto; max-width: 400px; }
+input, textarea { width: 100%; padding: 10px; margin-bottom: 8px; border-radius: 5px; border: none; }
+button.submit-btn { background: #ff3c3c; padding: 10px 20px; border-radius: 6px; color: #fff; font-weight: bold; cursor: pointer; transition: 0.3s; }
+button.submit-btn:hover { background: #ff1a1a; }
+.copy-email { margin-top: 15px; }
+.copy-email button { margin-left: 5px; padding: 5px 10px; border-radius: 5px; background: #ff3c3c; color: #fff; border: none; cursor: pointer; }
+.copy-email button:hover { background: #ff1a1a; }
+footer { margin-top: 40px; padding: 20px; font-size: 14px; color: #ccc; }
+@media(max-width:700px){
+  .hero-content h1{font-size:32px;}
+  .hero-content p{font-size:16px;}
+  .book-card{width:140px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <h1>Loren Barnhart</h1>
+    <p>Author | Storyteller | Dreamer</p>
+    <a href="#books" class="cta-btn">Explore Books</a>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+  <h2>Music Vibes</h2>
+  <img src="images/music-vibes.png" alt="Music Vibes">
+  <p>Listen now and get the vibe — available for licensing or sale!</p>
+  <audio controls>
+    <source src="main-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</section>
+
+<!-- BOOKS -->
+<h2 id="books">Books</h2>
+<div class="book-grid">
+  <div class="book-card">
+    <img src="images/book1.jpg" alt="Book 1">
+    <h3>Book Title 1</h3>
+    <a href="https://draft2digital.com/book/4180241" target="_blank">View / Buy</a>
+  </div>
+  <div class="book-card">
+    <img src="images/book2.jpg" alt="Book 2">
+    <h3>Book Title 2</h3>
+    <a href="https://draft2digital.com/book/4177158" target="_blank">View / Buy</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form id="contact-form" action="https://formspree.io/f/xqegqaek" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required><br>
+    <input type="email" name="email" placeholder="Your Email" required><br>
+    <textarea name="message" placeholder="Your Message" required></textarea><br>
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
+  <p id="form-success" style="color:#00ff99; font-size:14px; margin-top:8px; display:none;">
+    ✅ Your message was sent! I’ll get back to you soon.
+  </p>
+  <div class="copy-email">
+    <span id="sales-email">barnhartloren33@gmail.com</span>
+    <button onclick="copyEmail()">Copy</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Loren Barnhart | Built with ❤️
+</footer>
+
+<script>
+function copyEmail() {
+  const email = document.getElementById('sales-email').innerText;
+  navigator.clipboard.writeText(email)
+    .then(() => alert('Email copied to clipboard!'));
+}
+
+// Formspree submission
+const form = document.getElementById('contact-form');
+const successMsg = document.getElementById('form-success');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if (response.ok) {
+      successMsg.style.display = 'block';
+      form.reset();
+    } else {
+      response.json().then(data => {
+        if (data.errors) {
+          alert("Oops! " + data.errors.map(error => error.message).join(", "));
+        } else {
+          alert("Oops! There was a problem submitting your form.");
+        }
+      });
+    }
+  })
+  .catch(() => alert("Oops! There was a problem submitting your form."));
+});
+</script>
+
+</body>
+</html>

@@ -8,7 +8,7 @@
   <style>
     /* Reset & Fonts */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #1a1a1a; line-height: 1.6; }
+    body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #1a1a1a; line-height: 1.6; overflow-x: hidden; }
     a { color: #1d4ed8; text-decoration: none; transition: color 0.3s; }
     a:hover { color: #2563eb; }
 
@@ -26,25 +26,30 @@
 
     /* Services */
     .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .service { background: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
-    .service:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+    .service { background: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s; opacity: 0; transform: translateY(30px); }
+    .service:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); background: #f3f4f6; }
 
     /* Buttons */
-    .btn { display: inline-block; padding: 0.6rem 1.2rem; background: #1d4ed8; color: #fff; border-radius: 8px; font-weight: 600; margin-top: 1rem; transition: background 0.3s; }
-    .btn:hover { background: #2563eb; }
+    .btn { display: inline-block; padding: 0.6rem 1.2rem; background: #1d4ed8; color: #fff; border-radius: 8px; font-weight: 600; margin-top: 1rem; transition: transform 0.3s, background 0.3s; }
+    .btn:hover { background: #2563eb; transform: scale(1.05); }
 
     /* Footer */
-    footer { text-align: center; font-size: 0.9rem; color: #6b7280; padding-bottom: 2rem; margin-top: 4rem; }
+    footer { text-align: center; font-size: 0.9rem; color: #6b7280; padding-bottom: 2rem; margin-top: 4rem; opacity: 0; transform: translateY(30px); }
 
     /* Animations */
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
-    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    .fade-left, .fade-right, .fade-up { opacity: 0; }
+    .fade-left { transform: translateX(-30px); }
+    .fade-right { transform: translateX(30px); }
+    .fade-up { transform: translateY(30px); }
+
+    .appear { opacity: 1 !important; transform: translate(0,0) !important; transition: all 0.8s ease-out; }
+
   </style>
 </head>
 <body>
 
   <!-- Header / Hero -->
-  <header class="fade-in">
+  <header class="fade-up">
     <h1>Loren Barnhart</h1>
     <p><strong>AI‑Driven Social Media Content Strategist</strong></p>
     <img src="./assets/loren-stacy.png" alt="Loren & Stacy" class="hero-img">
@@ -52,13 +57,13 @@
   </header>
 
   <!-- About Me -->
-  <section class="fade-in">
+  <section class="fade-left">
     <h2>👨‍👩‍👧 About Me</h2>
     <p>I combine technical precision and creative storytelling to deliver social media strategies that connect brands with real people. Every plan I create is <strong>custom-built</strong>, no templates, perfectly aligned with each brand’s voice and audience.</p>
   </section>
 
   <!-- Services -->
-  <section class="fade-in">
+  <section class="fade-right">
     <h2>🚀 Services I Offer</h2>
     <div class="services">
       <div class="service">
@@ -85,13 +90,13 @@
   </section>
 
   <!-- Sample Work -->
-  <section class="fade-in">
+  <section class="fade-left">
     <h2>📂 Sample Work</h2>
     <p>I can provide a <strong>7-Day Sample Content Plan</strong> on request to show structure, tone, and brand alignment.</p>
   </section>
 
   <!-- Experience & Background -->
-  <section class="fade-in">
+  <section class="fade-right">
     <h2>💡 Experience & Background</h2>
     <ul>
       <li>Author of <em>The Quiet Collapse</em> and <em>Four Lanes From Death</em></li>
@@ -101,7 +106,7 @@
   </section>
 
   <!-- Portfolio Links -->
-  <section class="fade-in">
+  <section class="fade-left">
     <h2>🔗 Live Portfolio</h2>
     <p>These are live examples deployed on Netlify:</p>
     <p>🌐 <a href="[Your Main Portfolio URL]" target="_blank">Main Portfolio</a></p>
@@ -109,7 +114,7 @@
   </section>
 
   <!-- Contact -->
-  <section class="fade-in">
+  <section class="fade-up">
     <h2>📬 Contact Me</h2>
     <p>I’m available for freelance social media content strategy and custom solutions.</p>
     <p><strong>Email:</strong> lorengrowth@gmail.com</p>
@@ -118,18 +123,18 @@
   </section>
 
   <!-- Footer -->
-  <footer class="fade-in">
+  <footer class="fade-up">
     <p>Portfolio maintained by Loren Barnhart | Mechanic-Tuned Digital Development</p>
   </footer>
 
   <script>
-    // Simple fade-in scroll animation
-    const faders = document.querySelectorAll('.fade-in');
+    // Scroll-triggered animations
+    const faders = document.querySelectorAll('.fade-left, .fade-right, .fade-up');
     const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
     const appearOnScroll = new IntersectionObserver(function(entries, observer){
       entries.forEach(entry => {
         if(entry.isIntersecting){
-          entry.target.style.animationPlayState = 'running';
+          entry.target.classList.add('appear');
           observer.unobserve(entry.target);
         }
       });

@@ -1,138 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Loren Barnhart | AI Content Strategist</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loren Barnhart | AI Content Systems & Digital Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Fonts */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #1a1a1a; line-height: 1.6; }
+    a { color: #1d4ed8; text-decoration: none; transition: color 0.3s; }
+    a:hover { color: #2563eb; }
 
-<style>
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background: #121212;
-    color: #fff;
-    text-align: center;
-}
+    /* Layout */
+    header, section, footer { max-width: 900px; margin: auto; padding: 2rem 1rem; }
+    h1, h2, h3 { margin-bottom: 1rem; }
+    h1 { font-size: 2.5rem; font-weight: 700; }
+    h2 { font-size: 1.8rem; color: #111827; }
+    h3 { font-size: 1.2rem; color: #374151; }
+    p { margin-bottom: 1rem; }
 
-section { padding: 50px 20px; }
+    /* Header */
+    header { text-align: center; padding-top: 3rem; }
+    .hero-img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin: 1rem auto; border: 4px solid #1d4ed8; }
 
-#hero {
-    background: #1c1c1c;
-    border-bottom: 4px solid #ff3c3c;
-}
+    /* Services */
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .service { background: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+    .service:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
 
-.hero-content h1 { font-size: 42px; margin: 0; }
+    /* Buttons */
+    .btn { display: inline-block; padding: 0.6rem 1.2rem; background: #1d4ed8; color: #fff; border-radius: 8px; font-weight: 600; margin-top: 1rem; transition: background 0.3s; }
+    .btn:hover { background: #2563eb; }
 
-.cta-btn {
-    background: #ff3c3c;
-    padding: 12px 24px;
-    border-radius: 6px;
-    color: #fff;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 15px;
-}
+    /* Footer */
+    footer { text-align: center; font-size: 0.9rem; color: #6b7280; padding-bottom: 2rem; margin-top: 4rem; }
 
-.cta-btn:hover { background: #ff1a1a; }
-
-.light {
-    background: #f4f4f4;
-    color: #333;
-}
-
-.content-box {
-    max-width: 800px;
-    margin: auto;
-    text-align: left;
-}
-
-ul { line-height: 1.8; }
-
-footer {
-    background: #000;
-    color: #888;
-    padding: 30px;
-}
-</style>
+    /* Animations */
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+  </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section id="hero">
-    <div class="hero-content">
-        <h1>Loren Barnhart</h1>
-        <p><strong>AI-Driven Social Media Content Strategist</strong></p>
-        <p style="max-width:600px; margin:auto;">
-        I create fully customized 30-day content systems that help small businesses stay consistent, visible, and engaging online.
-        </p>
-        <a href="#contact" class="cta-btn">Get Your Content Plan</a>
+  <!-- Header / Hero -->
+  <header class="fade-in">
+    <h1>Loren Barnhart</h1>
+    <p><strong>AI‑Driven Social Media Content Strategist</strong></p>
+    <img src="./assets/loren-stacy.png" alt="Loren & Stacy" class="hero-img">
+    <p>I create fully customized 30-day social media content systems that help small businesses stay consistent, visible, and engaging online.</p>
+  </header>
+
+  <!-- About Me -->
+  <section class="fade-in">
+    <h2>👨‍👩‍👧 About Me</h2>
+    <p>I combine technical precision and creative storytelling to deliver social media strategies that connect brands with real people. Every plan I create is <strong>custom-built</strong>, no templates, perfectly aligned with each brand’s voice and audience.</p>
+  </section>
+
+  <!-- Services -->
+  <section class="fade-in">
+    <h2>🚀 Services I Offer</h2>
+    <div class="services">
+      <div class="service">
+        <h3>30-Day Content Calendars</h3>
+        <p>Comprehensive, brand-aligned content calendars ready to post.</p>
+      </div>
+      <div class="service">
+        <h3>Platform-Specific Posts</h3>
+        <p>Custom posts designed for Facebook, Instagram, and other platforms.</p>
+      </div>
+      <div class="service">
+        <h3>Brand Voice & Messaging</h3>
+        <p>Ensure every post reflects your unique brand personality and goals.</p>
+      </div>
+      <div class="service">
+        <h3>Professional Reports</h3>
+        <p>PDF reports that clearly outline strategy and analytics for clients.</p>
+      </div>
+      <div class="service">
+        <h3>Tailored Strategy</h3>
+        <p>Strategies customized to meet your business objectives and audience.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- MISSION -->
-<section class="light">
-    <h2>Built with Mechanic’s Logic. Created with a Writer’s Soul.</h2>
-    <p><em>15 years of precision thinking, now applied to digital growth.</em></p>
-</section>
+  <!-- Sample Work -->
+  <section class="fade-in">
+    <h2>📂 Sample Work</h2>
+    <p>I can provide a <strong>7-Day Sample Content Plan</strong> on request to show structure, tone, and brand alignment.</p>
+  </section>
 
-<!-- SERVICES -->
-<section>
-    <div class="content-box">
-        <h2>What I Do</h2>
-        <ul>
-            <li>✔ 30-Day Social Media Content Calendars</li>
-            <li>✔ Facebook & Instagram Post Creation</li>
-            <li>✔ Brand Voice Matching (No Templates)</li>
-            <li>✔ Ready-to-Use PDF Delivery</li>
-        </ul>
-    </div>
-</section>
+  <!-- Experience & Background -->
+  <section class="fade-in">
+    <h2>💡 Experience & Background</h2>
+    <ul>
+      <li>Author of <em>The Quiet Collapse</em> and <em>Four Lanes From Death</em></li>
+      <li>Technical Founder building digital systems with precision and strategy</li>
+      <li>Expert in combining analytics, copywriting, and branding into actionable social media plans</li>
+    </ul>
+  </section>
 
-<!-- SAMPLE -->
-<section class="light">
-    <h2>Sample Work</h2>
-    <p>Example: 7-Day Content Plan for a Local Business</p>
-    <a href="#" class="cta-btn">View Sample</a>
-</section>
+  <!-- Portfolio Links -->
+  <section class="fade-in">
+    <h2>🔗 Live Portfolio</h2>
+    <p>These are live examples deployed on Netlify:</p>
+    <p>🌐 <a href="[Your Main Portfolio URL]" target="_blank">Main Portfolio</a></p>
+    <p>🌐 <a href="[Your Other Site URL]" target="_blank">Website Demo</a></p>
+  </section>
 
-<!-- EXPERIENCE -->
-<section>
-    <div class="content-box">
-        <h2>Experience</h2>
+  <!-- Contact -->
+  <section class="fade-in">
+    <h2>📬 Contact Me</h2>
+    <p>I’m available for freelance social media content strategy and custom solutions.</p>
+    <p><strong>Email:</strong> lorengrowth@gmail.com</p>
+    <p><strong>Fiverr:</strong> <a href="[Your Fiverr Profile URL]" target="_blank">Visit My Profile</a></p>
+    <a href="[Your Fiverr Profile URL]" target="_blank" class="btn">Hire Me on Fiverr</a>
+  </section>
 
-        <p><strong>Automotive Diagnostics Specialist (10+ Years)</strong><br>
-        Advanced ECM/BCM systems, precision troubleshooting, and technical problem-solving.</p>
+  <!-- Footer -->
+  <footer class="fade-in">
+    <p>Portfolio maintained by Loren Barnhart | Mechanic-Tuned Digital Development</p>
+  </footer>
 
-        <p><strong>Technical Founder & Author</strong><br>
-        Building digital systems, content strategies, and creative assets designed to connect with real audiences.</p>
-    </div>
-</section>
-
-<!-- CREATIVE -->
-<section class="light">
-    <h2>Creative Background</h2>
-    <p>Author of <em>The Quiet Collapse</em> and <em>Four Lanes From Death</em>.</p>
-    <p>This storytelling foundation strengthens my ability to create content that connects, engages, and converts.</p>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-    <h2>Get Your Custom Content Plan</h2>
-    <p>I’ll build a content system tailored to your business, audience, and goals.</p>
-
-    <form action="https://formspree.io/f/xqegqaek" method="POST" style="max-width:400px; margin:auto;">
-        <input type="text" name="name" placeholder="Name" required style="width:100%; padding:10px; margin-bottom:10px;">
-        <input type="email" name="email" placeholder="Email" required style="width:100%; padding:10px; margin-bottom:10px;">
-        <textarea name="message" placeholder="Message" required style="width:100%; padding:10px;"></textarea>
-        <button type="submit" class="cta-btn" style="width:100%;">Send Message</button>
-    </form>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Loren Barnhart | AI Content Systems</p>
-</footer>
+  <script>
+    // Simple fade-in scroll animation
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
 
 </body>
 </html>

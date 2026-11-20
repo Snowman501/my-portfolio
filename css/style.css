@@ -3,3 +3,17 @@
 
 /* Keep cross-site navigation available on narrow Android screens. */
 @media(max-width:760px){.nav{flex-wrap:wrap;padding:14px 0;gap:12px}.nav nav{display:flex;width:100%;justify-content:space-between;gap:8px;font-size:13px}.nav nav a:not(.nav-contact){display:inline}.nav-contact{padding:8px 13px}}
+
+/* LB Design Studio service and trust sections */
+.services-section{background:#0a1a2c}
+.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.service-card{min-width:0;padding:28px;border:1px solid #375368;border-radius:18px;background:linear-gradient(155deg,#15384a,#0c2639)}
+.service-number{display:inline-block;color:#80e6c8;font-weight:800;font-size:12px;letter-spacing:.14em;margin-bottom:22px}
+.service-card h3{font-size:25px;line-height:1.18;margin:0 0 15px}
+.service-card p{color:#bed0db;margin:0}
+.service-note{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:24px;padding:24px;border:1px solid #426375;border-radius:16px;background:#113042}
+.service-note p{color:#bed0db;max-width:650px;margin:7px 0 0}
+.service-note .button{white-space:nowrap}
+.contact-note{font-size:13px!important;opacity:.85;margin:22px auto 0;max-width:560px}
+@media(max-width:850px){.service-grid{grid-template-columns:1fr}.service-note{flex-direction:column;align-items:stretch}.service-note .button{white-space:normal}}
+@media(max-width:450px){.nav nav{font-size:12px;flex-wrap:wrap}.brand{font-size:15px}.service-card{padding:22px}.hero h1{overflow-wrap:break-word}}

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081526">
+  <meta name="description" content="Explore The Author's Mind, an in-development writing studio by Loren Barnhart. See prototype features, testing milestones, and planned capabilities.">
+  <title>The Author's Mind | Development Showcase | LB Design Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .showcase-hero{padding:80px 0 65px;background:radial-gradient(circle at 82% 14%,#1b4d55 0%,transparent 42%),#081526}
+    .showcase-hero h1{font-size:clamp(46px,8vw,86px);line-height:1.05;letter-spacing:-.055em;max-width:850px;margin:18px 0 24px}
+    .showcase-hero h1 span{color:#78e3c1}
+    .showcase-hero p{max-width:730px;font-size:clamp(17px,2vw,21px);color:#c5d6e2}
+    .status-line{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0 0}
+    .status-label{display:inline-block;border-radius:99px;padding:8px 13px;border:1px solid #547b83;color:#baf8e6;font-size:13px;font-weight:800}
+    .status-label.future{border-color:#6f748a;color:#d1d7e1}
+    .showcase-section{padding:70px 0;border-top:1px solid #264154}
+    .showcase-section h2{font-size:clamp(30px,4.6vw,52px);line-height:1.12;letter-spacing:-.04em;margin:10px 0 20px}
+    .showcase-section .lead{font-size:18px;color:#b7cad8;max-width:760px}
+    .studio-preview{display:grid;grid-template-columns:minmax(175px,.7fr) minmax(0,2fr);border:1px solid #496778;border-radius:22px;overflow:hidden;background:#102a40;margin-top:30px;box-shadow:0 24px 65px #0004}
+    .studio-sidebar{padding:25px;background:#0c2033;border-right:1px solid #344b5e}
+    .studio-sidebar strong{font-size:19px;line-height:1.2;display:block;margin-bottom:25px}
+    .chapter{padding:13px 12px;border-radius:10px;color:#b8cedd;font-size:15px;margin:8px 0}
+    .chapter.active{background:#1f4a50;color:#d7fff0}
+    .studio-work{padding:34px;min-width:0}
+    .studio-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#a6c2d2;font-size:14px;border-bottom:1px solid #3b5968;padding-bottom:16px}
+    .studio-document{max-width:650px;padding-top:22px}
+    .studio-document h3{font-family:Georgia,serif;font-size:clamp(26px,3.3vw,38px);font-weight:500;margin:0 0 20px}
+    .studio-document p{font-family:Georgia,serif;font-size:18px;line-height:1.9;color:#dbe5eb}
+    .concept-note{font-size:13px;color:#aebdd1;margin:14px 0 0}
+    .feature-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:30px 0 18px}
+    .feature-tabs button{border:1px solid #547183;background:#112d42;color:#ecf6f8;border-radius:11px;padding:13px 18px;font:inherit;font-weight:750;cursor:pointer;min-height:48px}
+    .feature-tabs button[aria-selected="true"]{background:#a5f0d6;color:#082239}
+    .feature-tabs button:focus-visible{outline:3px solid #78e3c1;outline-offset:3px}
+    .feature-panel{background:linear-gradient(130deg,#153c4d,#0e263c);border:1px solid #527083;border-radius:18px;padding:30px;min-height:230px}
+    .feature-panel h3{font-size:clamp(24px,3vw,34px);margin:4px 0 10px}
+    .feature-panel p{color:#c2d4df;max-width:750px;font-size:17px}
+    .feature-panel .stage{color:#a9f3dc;font-weight:800;letter-spacing:.05em;text-transform:uppercase;font-size:13px}
+    .roadmap{display:grid;gap:14px;margin-top:30px}
+    .milestone{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;padding:23px;border:1px solid #405d70;border-radius:16px;background:#102a40}
+    .milestone h3{font-size:21px;margin:0 0 8px}
+    .milestone p{color:#b8cbd7;margin:0;max-width:720px}
+    .milestone .status-label{white-space:nowrap;margin:0}
+    .showcase-footer{background:#77dfbf;color:#082239;padding:68px 0;text-align:center}
+    .showcase-footer h2{font-size:clamp(32px,5vw,54px);line-height:1.12;margin:0 0 20px}
+    .showcase-footer p{max-width:670px;margin:0 auto 25px;font-size:18px}
+    .showcase-footer .button{background:#082239;color:white}
+    @media(max-width:670px){.showcase-hero{padding:58px 0}.showcase-section{padding:50px 0}.studio-preview{grid-template-columns:1fr}.studio-sidebar{border-right:0;border-bottom:1px solid #344b5e;padding:20px}.studio-sidebar strong{margin-bottom:9px}.studio-sidebar .chapter{display:inline-block;margin:5px 5px 0 0;padding:8px 10px}.studio-work{padding:23px}.milestone{grid-template-columns:1fr}.milestone .status-label{justify-self:start}.feature-panel{padding:24px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark">LB</span><span>LB Design Studio<span class="brand-sub">Where Innovation Meets Compassion</span></span></a><nav aria-label="Project navigation"><a href="index.html#projects">All projects</a><a class="nav-contact" href="index.html#contact">Get in touch</a></nav></div></header>
+  <main id="content">
+    <section class="showcase-hero"><div class="container">
+      <p class="eyebrow">Inside the build / Writing software</p>
+      <h1>The Author's <span>Mind.</span></h1>
+      <p>A writing workspace designed around a simple belief: authors should stay in control of their stories. Explore the development direction, see what's been prototyped, and follow the work still ahead.</p>
+      <div class="status-line"><span class="status-label">Private development prototype</span><span class="status-label future">Not a public product yet</span><span class="status-label future">No sign-up or purchase</span></div>
+    </div></section>
+    <section class="showcase-section" id="workspace"><div class="container">
+      <p class="eyebrow">A glimpse of the experience</p>
+      <h2>A calmer place to build a story.</h2>
+      <p class="lead">The illustrative workspace below communicates the intended experience. It is not a live editor, a captured customer manuscript, or a screenshot of the current private build.</p>
+      <div class="studio-preview" role="img" aria-label="Illustrative writing application layout with a chapter list, editor panel and manuscript text">
+        <div class="studio-sidebar"><strong>The Author's Mind</strong><span class="chapter active">Chapter One</span><span class="chapter">Chapter Two</span><span class="chapter">Ideas & Notes</span></div>
+        <div class="studio-work"><div class="studio-top"><span>Writing workspace · concept</span><span>Author-controlled</span></div><div class="studio-document"><h3>A place for the next chapter</h3><p>The first sentence is yours. So is every revision, every decision, and every page that follows.</p><p>Write, organize, review, and keep a backup of what matters.</p></div></div>
+      </div>
+      <p class="concept-note">Illustrative layout only. No text is saved or transmitted from this showcase.</p>
+    </div></section>
+    <section class="showcase-section" id="features"><div class="container">
+      <p class="eyebrow">Explore the feature direction</p><h2>What it does—and what comes next.</h2>
+      <p class="lead">Tap a feature to see its purpose and development status. These descriptions distinguish prototype capabilities from future plans.</p>
+      <div class="feature-tabs" role="tablist" aria-label="Author's Mind features">
+        <button type="button" role="tab" id="tab-write" aria-controls="feature-content" aria-selected="true" data-feature="write">Writing</button>
+        <button type="button" role="tab" id="tab-safety" aria-controls="feature-content" aria-selected="false" data-feature="safety" tabindex="-1">Backup & recovery</button>
+        <button type="button" role="tab" id="tab-review" aria-controls="feature-content" aria-selected="false" data-feature="review" tabindex="-1">Editing</button>
+        <button type="button" role="tab" id="tab-companion" aria-controls="feature-content" aria-selected="false" data-feature="companion" tabindex="-1">AI companion</button>
+        <button type="button" role="tab" id="tab-export" aria-controls="feature-content" aria-selected="false" data-feature="export" tabindex="-1">Publishing tools</button>
+      </div>
+      <div id="feature-content" class="feature-panel" role="tabpanel" aria-labelledby="tab-write" tabindex="0" aria-live="polite">
+        <span class="stage" id="feature-stage">Prototype implemented · testing continues</span><h3 id="feature-title">Write and organize chapters</h3><p id="feature-description">The private build includes a chapter-oriented editor, word counts, device-local saving, and manuscript organization. It's still undergoing durability and real-device testing.</p>
+      </div>
+    </div></section>
+    <section class="showcase-section" id="roadmap"><div class="container">
+      <p class="eyebrow">Honest development roadmap</p><h2>Progress without pretend percentages.</h2>
+      <p class="lead">This is a public overview of the private development project—not a release schedule or promise that every proposed feature will ship.</p>
+      <div class="roadmap">
+        <article class="milestone"><div><h3>Core manuscript workspace</h3><p>Chapter controls, word counts, local saves, and initial review tools exist in development builds. Continued device and storage testing is required.</p></div><span class="status-label">Prototype built</span></article>
+        <article class="milestone"><div><h3>Backup, recovery, and author control</h3><p>Local export/restore, snapshots, save safeguards, and consent-oriented design are being exercised through tests and owner rehearsals. External backups remain important.</p></div><span class="status-label">Testing</span></article>
+        <article class="milestone"><div><h3>Advanced writing companion</h3><p>A separate experimental message composer and idea capture have been developed. Voice recognition is not yet physically verified, and a live AI provider is not connected to the editor.</p></div><span class="status-label">Development</span></article>
+        <article class="milestone"><div><h3>Future AI, voice, and professional exports</h3><p>Optional conversational assistance, manuscript read-aloud, richer formatting, and publishing-oriented formats are aspirations under evaluation. Privacy and explicit author consent remain required.</p></div><span class="status-label future">Planned</span></article>
+        <article class="milestone"><div><h3>Public availability</h3><p>More Android, accessibility, reliability, and security work must happen before any public release or sales. No launch date or paid plan is announced.</p></div><span class="status-label future">Not scheduled</span></article>
+      </div>
+    </div></section>
+    <section class="showcase-footer"><div class="container">
+      <h2>Interested in where this goes?</h2>
+      <p>We welcome thoughtful questions about the concept. This showcase is informational; no beta invitation, account, purchase, or public access to the private software is offered here.</p>
+      <a class="button" href="mailto:lb.designstudio.2024@gmail.com?subject=The%20Author%27s%20Mind%20Project%20Interest">Ask about the project</a>
+      <p style="font-size:14px;margin-top:18px">Your email app prepares a draft; nothing sends automatically.</p>
+    </div></section>
+  </main>
+  <footer><div class="container footer-inner"><span>© 2026 LB Design Studio · Loren Barnhart.</span><a href="index.html">Back to portfolio</a></div></footer>
+  <script>
+    (() => {
+      const details = {
+        write: ["Prototype implemented · testing continues","Write and organize chapters","The private build includes a chapter-oriented editor, word counts, device-local saving, and manuscript organization. It is still undergoing durability and real-device testing."],
+        safety: ["Prototype implemented · testing continues","Keep your words recoverable","The development build includes manuscript export and restore, local snapshots, and guarded saving behavior. Browser storage alone is not a backup; external copies are still essential."],
+        review: ["Prototype implemented · limited scope","Review suggestions before changing text","An early rule-based grammar checker offers individual accept/reject decisions and history. It is not a comprehensive proofreader and can produce false positives."],
+        companion: ["Experimental and planned · not publicly available","A companion that respects the writer","An experimental composer and idea capture exist separately from the editor. Two-way AI conversation, provider integration, and production-quality spoken interaction are planned—not finished."],
+        export: ["Basic export built · advanced formats planned","Move your work when you're ready","Development builds support JSON backup/restore and plain-text manuscript export. Rich text and professional publishing formats such as DOCX and EPUB remain future work."]
+      };
+      const tabs = Array.from(document.querySelectorAll('[data-feature]'));
+      function select(tab, focus) {
+        tabs.forEach(button => { const active = button === tab; button.setAttribute('aria-selected', String(active)); button.tabIndex = active ? 0 : -1; });
+        const [stage,title,description] = details[tab.dataset.feature];
+        document.getElementById('feature-stage').textContent = stage;
+        document.getElementById('feature-title').textContent = title;
+        document.getElementById('feature-description').textContent = description;
+        document.getElementById('feature-content').setAttribute('aria-labelledby', tab.id);
+        if (focus) tab.focus();
+      }
+      tabs.forEach((tab,index) => {
+        tab.addEventListener('click', () => select(tab,false));
+        tab.addEventListener('keydown', event => {
+          if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+          event.preventDefault();
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length-1 : (index + (event.key === 'ArrowRight'?1:-1) + tabs.length) % tabs.length;
+          select(tabs[next],true);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

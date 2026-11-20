@@ -17,3 +17,44 @@
 .contact-note{font-size:13px!important;opacity:.85;margin:22px auto 0;max-width:560px}
 @media(max-width:850px){.service-grid{grid-template-columns:1fr}.service-note{flex-direction:column;align-items:stretch}.service-note .button{white-space:normal}}
 @media(max-width:450px){.nav nav{font-size:12px;flex-wrap:wrap}.brand{font-size:15px}.service-card{padding:22px}.hero h1{overflow-wrap:break-word}}
+
+/* Compact, illustrative portfolio previews; no private app content embedded. */
+.project-preview{height:210px;border-radius:12px;overflow:hidden;border:1px solid #61758b;margin-bottom:24px;position:relative;color:#effbfa}
+.preview-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 15px;font-size:11px;font-weight:800;letter-spacing:.06em;border-bottom:1px solid #ffffff32}
+.preview-top span:last-child{font-size:10px;font-weight:600;opacity:.85}
+.preview-main{padding:19px 22px}
+.preview-main .preview-head{font-size:23px;font-weight:850;line-height:1.15;letter-spacing:-.03em;max-width:290px}
+.preview-main small{font-size:11px;opacity:.86;font-weight:650}
+.preview-scanner{background:linear-gradient(130deg,#10323d,#096355)}
+.preview-scanner .preview-input{margin:15px 0 10px;padding:7px 11px;border-radius:6px;background:#e7faf5;color:#245049;font-size:11px;max-width:290px}
+.preview-bars{display:flex;gap:6px;align-items:end;height:28px;margin-bottom:8px}
+.preview-bars i{width:70px;height:9px;border-radius:4px;background:#8be7bd}
+.preview-bars i:nth-child(2){width:52px;background:#d6f4d6}.preview-bars i:nth-child(3){width:42px;background:#4ac6b0}
+.preview-nextgen{background:linear-gradient(135deg,#0d172f,#26315d)}
+.preview-nextgen .preview-head{font-size:24px;margin-bottom:16px}
+.preview-nextgen .preview-top{border-color:#ed8b5038}
+.preview-blocks{display:flex;gap:8px;margin-bottom:10px}.preview-blocks i{height:17px;width:72px;background:#fd7e29;border-radius:4px}.preview-blocks i:nth-child(2){background:#fca96d;width:48px}.preview-blocks i:nth-child(3){background:#4659a3;width:36px}
+.preview-mind{background:#0d2831}
+.preview-editor{display:grid;grid-template-columns:27% 1fr;height:165px}
+.preview-rail{padding:15px;background:#12212d;border-right:1px solid #647d86}
+.preview-rail i{display:block;height:9px;background:#3c626b;border-radius:4px;margin:0 0 13px}
+.preview-rail i:first-child{background:#9be1bd}
+.preview-page{background:#ecf1ec;color:#18333c;padding:19px 22px;min-width:0}
+.preview-page strong{display:block;font-family:Georgia,serif;font-size:19px;margin-bottom:13px}
+.preview-page span{display:block;height:8px;max-width:265px;margin:8px 0;background:#c0cfcf;border-radius:3px}
+.preview-page span:nth-of-type(2){width:87%}.preview-page span:nth-of-type(3){width:63%}
+.preview-author{background:linear-gradient(115deg,#0a1d2e,#253a44)}
+.preview-author .preview-main{display:flex;gap:18px;align-items:center}
+.preview-book{display:grid;place-items:center;flex:0 0 105px;height:132px;padding:10px;text-align:center;font-family:Georgia,serif;font-size:13px;font-weight:800;line-height:1.25;letter-spacing:.04em;color:#ead9b4;background:linear-gradient(155deg,#473b32,#111b2a);border:1px solid #90775f;box-shadow:6px 8px 0 #07121d90}
+.preview-author-copy{display:grid;gap:10px}.preview-author-copy strong{font-size:20px;line-height:1.2}
+.preview-disclaimer{color:var(--muted);font-size:14px;margin:18px 0 0}
+.process-section{background:#0c2335}
+.process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
+.process-card{background:#143447;border:1px solid #46687a;border-radius:18px;padding:27px;min-width:0}
+.process-step{font-size:12px;font-weight:900;letter-spacing:.14em;color:#a2f6d9}
+.process-card h3{font-size:23px;line-height:1.2;margin:19px 0 13px}
+.process-card p{color:#c6d8e2;margin:0}
+@media(min-width:761px){.project-card{transition:transform .25s ease,border-color .25s ease}.project-card:hover{transform:translateY(-4px);border-color:#68c9b5}}
+@media(max-width:850px){.process-grid{grid-template-columns:1fr}}
+@media(max-width:450px){.project-preview{height:190px}.preview-main{padding:16px}.preview-main .preview-head{font-size:20px}.preview-author-copy strong{font-size:17px}.preview-book{flex-basis:90px;height:116px;font-size:11px}.process-card{padding:23px}}
+@media(prefers-reduced-motion:reduce){.project-card{transition:none!important}.project-card:hover{transform:none!important}}
